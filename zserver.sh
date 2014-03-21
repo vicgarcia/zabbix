@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# zserver_install.sh - install zabbix server on ubuntu 12.04 vm w/ nginx/fpm and postgres
+# zserver.sh - install zabbix server on ubuntu 12.04 vm w/ nginx/fpm and postgres
+#              more info availabile at https://github.com/vicgarcia/zabbix-scripts
 
 # upgrade and install ubuntu standard environment packages
 echo -e "\nupdate and upgrade..."
@@ -20,7 +21,7 @@ apt-get -qq -y install postgresql postgresql-client
 # install latest php on ubuntu 12.04
 echo -e "\ninstall php..."
 add-apt-repository ppa:ondrej/php5 -y && apt-get -qq -y update
-apt-get -qq -y install php5-fpm php5-cli php5-dev php5-pgsql php-pear php5-gd
+apt-get -qq -y install php5-fpm php5-cli php5-dev php5-pgsql php5-gd
 
 # add configurations in php.ini (necessary for zabbix web ui)
 sed -i 's/post_max_size = 8M/post_max_size = 32M/gi' /etc/php5/fpm/php.ini
@@ -122,21 +123,14 @@ echo -e "\ninstall zabbix..."
 add-apt-repository ppa:pbardov/zabbix -y > /dev/null && apt-get -qq -y update
 apt-get -qq -y install zabbix-server-pgsql      # also create zabbix linux user and group
 
-# set zabbix postgres pw as env variable for use in the rest of this script
+# generate random password and set env vars for remainder of script
 ZABBIX_DB_PASSWORD=`apg -n 1`
 export PGPASSWORD=$ZABBIX_DB_PASSWORD
-# XXX  prompt for a password
-#echo -e "\nPlease enter the zabbix postgres password again for use in the rest of this script.  You will be entering this in unmasked text, so make sure nobody is around to shoulder surf this.\n"
-#read ZABBIX_DB_PASSWORD
 
-# add zabbix db and db user (note the password you use here, it's for later)
+# add zabbix db and db user
 sudo -u postgres psql -c "create user zabbix with password '$ZABBIX_DB_PASSWORD'"
 sudo -u postgres psql -c "create database zabbix"
 sudo -u postgres psql -c "grant all privileges on database zabbix to zabbix"
-# XXX archive the use of cli tools here
-#echo -e "\nWe're going to create postgres user and database for zabbix. You will be prompted for a password twice.  You will need this password again later.  Do not create this user as a superuser or with grant privileges when propmted to do so.  Select 'N' for both.\n"
-#sudo -u postgres createuser -D -P $ZABBIX_DB_PASSWORD zabbix
-#sudo -u postgres createdb -O zabbix zabbix
 
 # add this to pg_hba.conf for zabbix
 echo 'local   zabbix      zabbix                            md5' >> /etc/postgresql/9.1/main/pg_hba.conf
@@ -148,6 +142,9 @@ psql -h 127.0.0.1 -U zabbix zabbix < schema.sql
 psql -h 127.0.0.1 -U zabbix zabbix < images.sql
 psql -h 127.0.0.1 -U zabbix zabbix < data.sql
 popd
+
+# XXX todo : use database backups if they've been copied to the server
+#            this script will be all in one install/restore
 
 # configure server to use database (password)
 sed -i "s/# DBPassword=/DBPassword=$ZABBIX_DB_PASSWORD/gi" /etc/zabbix/zabbix_server.conf
@@ -193,10 +190,14 @@ global \$DB;
 ?>
 DELIM
 
-# restart zabbix service
-/etc/init.d/zabbix-server restart
+# configure firewall
+ufw allow 80/tcp        # nginx / web
+ufw allow 22/tcp        # ssh
+ufw allow 10050/tcp     # zabbix-server
+ufw enable
 
-# restart fpm and nginx
+# restart zabbix, fpm, nginx services
+/etc/init.d/zabbix-server restart
 /etc/init.d/php5-fpm restart
 /etc/init.d/nginx restart
 
@@ -210,4 +211,3 @@ echo
 # references :
 #   https://www.zabbix.com/wiki/howto/db/postgres
 #   http://www.v12n.com/mediawiki/index.php/Ubuntu_Zabbix
-
