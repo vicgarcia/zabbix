@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# zinstall.sh : install zabbix agent on a ubuntu system (exec as root)
+# zagent.sh - install zabbix agent on a ubuntu system (run this as root)
+#             this script will also configure nginx and php-fpm monitoring
 
 # get settings to use to configure the agent from user
 echo -e "What's the IP for the Zabbix server?"
@@ -22,37 +23,28 @@ mkdir -p /etc/zabbix/scripts
 cat > /etc/zabbix/scripts/phpfpm.sh << DELIM
 #!/bin/bash
 
-# Zabbix requested parameter
 ZBX_REQ_DATA="\$1"
 ZBX_REQ_DATA_URL="\$2"
-
-# Nginx defaults
 PHPFPM_STATUS_DEFAULT_URL="http://localhost:80/php-fpm_status"
 WGET_BIN="/usr/bin/wget"
-
-# Error handling:
 ERROR_NO_ACCESS_FILE="-0.9900"
 ERROR_NO_ACCESS="-0.9901"
 ERROR_WRONG_PARAM="-0.9902"
 ERROR_DATA="-0.9903" # either can not connect / bad host / bad port
 
-# Handle host and port if non-default
 if [ ! -z "\$ZBX_REQ_DATA_URL" ]; then
     URL="\$ZBX_REQ_DATA_URL"
 else
     URL="\$PHPFPM_STATUS_DEFAULT_URL"
 fi
 
-# save the nginx stats in a variable for future parsing
 PHPFPM_STATS=\$(\$WGET_BIN -q \$URL -O - 2> /dev/null)
 
-# error during retrieve
 if [ \$? -ne 0 -o -z "\$PHPFPM_STATS" ]; then
     echo \$ERROR_DATA
     exit 1
 fi
 
-# Extract data from nginx stats
 RESULT=\$(echo "\$PHPFPM_STATS" | awk 'match($0, "^'"\$ZBX_REQ_DATA"':[[:space:]]+(.*)", a) { print a[1] }')
 if [ \$? -ne 0 -o -z "\$RESULT" ]; then
     echo \$ERROR_WRONG_PARAM
@@ -69,37 +61,28 @@ chmod +x /etc/zabbix/scripts/phpfpm.sh
 cat > /etc/zabbix/scripts/nginx.sh << DELIM
 #!/bin/bash
 
-# Zabbix requested parameter
 ZBX_REQ_DATA="\$1"
 ZBX_REQ_DATA_URL="\$2"
-
-# Nginx defaults
 NGINX_STATUS_DEFAULT_URL="http://localhost:80/nginx_status"
 WGET_BIN="/usr/bin/wget"
-
-# Error handling
 ERROR_NO_ACCESS_FILE="-0.9900"
 ERROR_NO_ACCESS="-0.9901"
 ERROR_WRONG_PARAM="-0.9902"
 ERROR_DATA="-0.9903" # either can not connect /	bad host / bad port
 
-# Handle host and port if non-default
 if [ ! -z "\$ZBX_REQ_DATA_URL" ]; then
     URL="\$ZBX_REQ_DATA_URL"
 else
     URL="\$NGINX_STATUS_DEFAULT_URL"
 fi
 
-# save the nginx stats in a variable for future parsing
 NGINX_STATS=\$(\$WGET_BIN -q \$URL -O - 2> /dev/null)
 
-# error during retrieve
 if [ \$? -ne 0 -o -z "\$NGINX_STATS" ]; then
     echo \$ERROR_DATA
     exit 1
 fi
 
-# Extract data from nginx stats
 case \$ZBX_REQ_DATA in
     active_connections)   echo "\$NGINX_STATS" | head -1             | cut -f3 -d' ';;
     accepted_connections) echo "\$NGINX_STATS" | grep -Ev '[a-zA-Z]' | cut -f2 -d' ';;
@@ -136,4 +119,3 @@ usermod -a -G adm zabbix
 
 # restart zabbix agent with new settings
 service zabbix-agent restart
-
