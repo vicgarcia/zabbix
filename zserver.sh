@@ -3,9 +3,9 @@
 # zserver.sh - install zabbix server on ubuntu 12.04 vm w/ nginx/fpm and postgres
 #              more info availabile at https://github.com/vicgarcia/zabbix-scripts
 
-# upgrade and install ubuntu standard environment packages
+# update apt, don't upgrade, it tends to break things on certain vms
 echo -e "\nupdate and upgrade..."
-apt-get -qq -y update && apt-get -qq -y upgrade all
+apt-get -qq -y update
 
 # install apt-add-repository tool, apg (used below)
 apt-get -qq -y install python-software-properties apg
@@ -205,7 +205,7 @@ echo -e "\nInstall complete!"
 echo -e "\nGet started by loading this server in the browser to access the Zabbix UI."
 echo -e "\nThe default username and password is :  Admin : zabbix"
 echo -e "\nYour postgres zabbix user password is :  $ZABBIX_DB_PASSWORD"
-echo  
+echo
 
 # vic garcia | vicg4rcia.com
 # references :
