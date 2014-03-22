@@ -38,7 +38,8 @@ ListenIP=$THIS_SERVER_IP
 ListenPort=10050
 Server=$ZABBIX_SERVER_IP
 
-UserParameter=nginx[*],/etc/zabbix/scripts/nginx.sh "\$1" "\$2"
+UserParameter=nginx[*],/etc/zabbix/scripts/monitor-nginx.sh "\$1" "\$2"
+UserParameter=redis_stats[*],/etc/zabbix/scripts/monitor-redis.pl "\$1" "\$2" "\$3"
 DELIM
 
 # restart zabbix agent with new settings
