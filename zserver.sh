@@ -190,22 +190,21 @@ global \$DB;
 ?>
 DELIM
 
-# restart zabbix, fpm, nginx services
-/etc/init.d/zabbix-server restart
-/etc/init.d/php5-fpm restart
-/etc/init.d/nginx restart
+# configure firewall
+ufw allow 80/tcp        # nginx / web
+ufw allow 22/tcp        # ssh
+ufw allow 10050/tcp     # zabbix-server
+#ufw enable # XXX this causes issues, have the user do it
 
 echo -e "\nInstall complete!"
 echo -e "\nGet started by loading this server in the browser to access the Zabbix UI."
 echo -e "\nThe default username and password is :  Admin : zabbix"
 echo -e "\nYour postgres zabbix user password is :  $ZABBIX_DB_PASSWORD"
+echo -e "\nIn order to continue, you will need to enable the firewall and reboot"
+echo -e "\nthe server.  You can do this by running this command :"
 echo
-
-# configure firewall
-ufw allow 80/tcp        # nginx / web
-ufw allow 22/tcp        # ssh
-ufw allow 10050/tcp     # zabbix-server
-ufw enable
+echo -e "\n  ufw enable && shutdown -r now"
+echo
 
 # vic garcia | vicg4rcia.com
 # references :
