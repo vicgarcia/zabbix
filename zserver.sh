@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#
 # zserver.sh - install zabbix server on ubuntu 12.04 vm w/ nginx/fpm and postgres
 #              more info availabile at https://github.com/vicgarcia/zabbix-scripts
 
@@ -222,3 +222,6 @@ ufw enable
 # references :
 #   https://www.zabbix.com/wiki/howto/db/postgres
 #   http://www.v12n.com/mediawiki/index.php/Ubuntu_Zabbix
+#   https://www.zabbix.com/forum/showthread.php?p=136028
+#   https://delicious.com/vicg4rcia/zabbix
+#
