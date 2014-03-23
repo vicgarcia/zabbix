@@ -146,6 +146,17 @@ popd
 # XXX todo : use database backups if they've been copied to the server
 #            this script will be all in one install/restore
 
+# add zabbkit push notification script
+cat > /etc/zabbix/alert.d/zabbkit-push << DELIM
+#!/bin/bash
+
+curl -X POST\
+  -H "Content-type:application/json"\
+  -d "{Id:'\$1', text:'\$2', triggerId:'\$3', playSound:true}"\
+  http://zabbkit.inside.cactussoft.biz/api/messages
+DELIM
+chmod +x /etc/zabbix/alert.d/zabbkit-push
+
 # configure server to use database (password)
 sed -i "s/# DBPassword=/DBPassword=$ZABBIX_DB_PASSWORD/gi" /etc/zabbix/zabbix_server.conf
 
