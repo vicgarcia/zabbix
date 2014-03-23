@@ -1,7 +1,8 @@
 #!/bin/bash
 #
-# zserver.sh - install zabbix server on ubuntu 12.04 vm w/ nginx/fpm and postgres
-#              more info availabile at https://github.com/vicgarcia/zabbix-scripts
+#   zserver.sh - install zabbix server on ubuntu 12.04 vm w/ nginx/fpm and postgres
+#                more info availabile at https://github.com/vicgarcia/zabbix-scripts
+#
 
 # update apt, don't upgrade, it tends to break things on certain vms
 echo -e "\nupdate and upgrade..."
@@ -204,9 +205,9 @@ DELIM
 # configure firewall
 ufw allow 80/tcp        # nginx / web
 ufw allow 22/tcp        # ssh
-ufw allow 10050/tcp     # zabbix-server
-#ufw enable # XXX this causes issues, have the user do it
+ufw allow 10051/tcp     # zabbix-server
 
+# install complete, notify user
 echo -e "\nInstall complete!"
 echo -e "\nGet started by loading this server in the browser to access the Zabbix UI."
 echo -e "\nThe default username and password is :  Admin : zabbix"
@@ -217,10 +218,10 @@ echo
 echo -e "\n  ufw enable && shutdown -r now"
 echo
 
-# vic garcia | vicg4rcia.com
-# references :
-#   https://www.zabbix.com/wiki/howto/db/postgres
-#   http://www.v12n.com/mediawiki/index.php/Ubuntu_Zabbix
-#   https://www.zabbix.com/forum/showthread.php?p=136028
-#   https://delicious.com/vicg4rcia/zabbix
+#  vic garcia | vicg4rcia.com
+#  references :
+#    https://www.zabbix.com/wiki/howto/db/postgres
+#    http://www.v12n.com/mediawiki/index.php/Ubuntu_Zabbix
+#    https://www.zabbix.com/forum/showthread.php?p=136028
+#    https://delicious.com/vicg4rcia/zabbix
 #
