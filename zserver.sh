@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#
 # zserver.sh - install zabbix server on ubuntu 12.04 vm w/ nginx/fpm and postgres
 #              more info availabile at https://github.com/vicgarcia/zabbix-scripts
 
@@ -146,6 +146,17 @@ popd
 # XXX todo : use database backups if they've been copied to the server
 #            this script will be all in one install/restore
 
+# add zabbkit push notification script
+cat > /etc/zabbix/alert.d/zabbkit-push << DELIM
+#!/bin/bash
+
+curl -X POST\
+  -H "Content-type:application/json"\
+  -d "{Id:'\$1', text:'\$2', triggerId:'\$3', playSound:true}"\
+  http://zabbkit.inside.cactussoft.biz/api/messages
+DELIM
+chmod +x /etc/zabbix/alert.d/zabbkit-push
+
 # configure server to use database (password)
 sed -i "s/# DBPassword=/DBPassword=$ZABBIX_DB_PASSWORD/gi" /etc/zabbix/zabbix_server.conf
 
@@ -210,3 +221,6 @@ echo
 # references :
 #   https://www.zabbix.com/wiki/howto/db/postgres
 #   http://www.v12n.com/mediawiki/index.php/Ubuntu_Zabbix
+#   https://www.zabbix.com/forum/showthread.php?p=136028
+#   https://delicious.com/vicg4rcia/zabbix
+#
