@@ -6,7 +6,7 @@
 
 # update apt, don't upgrade, it tends to break things on certain vms
 echo -e "\nupdate and upgrade..."
-apt-get -qq -y update && apt-get -qq -y upgrade
+apt-get -qq -y update
 
 # install apt-add-repository tool, apg (used below)
 apt-get -qq -y install python-software-properties apg
