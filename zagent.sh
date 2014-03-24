@@ -50,3 +50,10 @@ DELIM
 
 # restart zabbix agent with new settings
 service zabbix-agent restart
+
+# references
+#   http://www.badllama.com/content/monitor-mysql-zabbix
+#   http://addmoremem.blogspot.com/2010/10/zabbixs-template-to-monitor-redis.html
+#   https://github.com/jizhang/zabbix-templates
+#   http://www.hjort.co/2009/12/postgresql-monitoring-on-zabbix.html
+#
