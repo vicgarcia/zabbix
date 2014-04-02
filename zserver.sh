@@ -147,6 +147,9 @@ popd
 # XXX todo : use database backups if they've been copied to the server
 #            this script will be all in one install/restore
 
+# create zabbix config directory
+mkdir -p /etc/zabbix
+
 # add zabbkit push notification script
 cat > /etc/zabbix/alert.d/zabbkit-push << DELIM
 #!/bin/bash
