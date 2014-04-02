@@ -38,11 +38,14 @@ existing Linux and MySQL templates before importing the onces included here.
 ### Agent Configs and Monitoring Scripts
 
 Configurations are for use by zabbix agent for monitoring a specific app
-or service.  Files prefixed with 'config-' should be installed in
+or service.  They define the items on the agent side that the Zabbix server
+will be monitoring.  Files prefixed with 'config-' should be installed in
 /etc/zabbix/zabbix_agentd.conf.d/
 
 Monitoring scripts are also sometimes used by the zabbix agent to retrieve
-data.  Files prefixed with 'monitor-' should be installed in
+data.  These scripts can be written in any shell scripting language, the
+obvious requirement is that the language is installed on the agent side
+server.  Files prefixed with 'monitor-' should be installed in
 /etc/zabbix/scripts/
 
 
