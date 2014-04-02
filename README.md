@@ -14,7 +14,7 @@ script, run it, and log the output to the file install.log as well as
 display it on screen.
 
 ```
-  curl -s http://rockst4r.net/zserver.sh | bash | install.log
+    curl -s http://rockst4r.net/zserver.sh | bash | tee install.log
 ```
 
 ### zagent.sh
@@ -22,16 +22,20 @@ display it on screen.
 This script will install and configure the necessary setup for the Zabbix
 agent on a Ubuntu 12.04 server.  This will allow the server to be monitored
 by a Zabbix server.
+```
+    curl -s http://rockst4r.net/zagent.sh | bash | tee install.log
+```
 
-### Templates
+
+#### Templates
 
 These are for use within the zabbix UI, for monitoring different services.
 
-### Configurations
+#### Configurations
 
 These are used by Zabbix agent to configure monitoring of various services.
 
-### Monitoring Scripts
+#### Monitoring Scripts
 
 These are used by Zabbix agent to monitor various services.
 
