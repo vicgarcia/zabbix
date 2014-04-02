@@ -1,7 +1,5 @@
 ## Zabbix Scripts
 
-These scripts are for use with the Zabbix monitoring system.
-
 ### zserver.sh
 
 This script gives you access to a one-liner to install a fully functional
@@ -21,7 +19,10 @@ display it on screen.
 
 This script will install and configure the necessary setup for the Zabbix
 agent on a Ubuntu 12.04 server.  This will allow the server to be monitored
-by a Zabbix server.
+by a Zabbix server.  The agent configurations and monitoring scripts that
+are part of this repository will automatically be installed by running this
+script as well.
+
 ```
     curl -s http://rockst4r.net/zagent.sh | bash | tee install.log
 ```
@@ -31,7 +32,7 @@ by a Zabbix server.
 Templates are collections of zabbix server configurations for monitoring a
 given application or service.  XML files prefixed with 'template-' in this
 repository are templates.  Import these via the Zabbix web UI.  Delete the
-existing Linux and MySQL templates befor importing the onces included here.
+existing Linux and MySQL templates before importing the onces included here.
 
 
 ### Agent Configs and Monitoring Scripts
