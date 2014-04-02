@@ -26,18 +26,23 @@ by a Zabbix server.
     curl -s http://rockst4r.net/zagent.sh | bash | tee install.log
 ```
 
+### Zabbix UI Templates
 
-#### Templates
+Templates are collections of zabbix server configurations for monitoring a
+given application or service.  XML files prefixed with 'template-' in this
+repository are templates.  Import these via the Zabbix web UI.  Delete the
+existing Linux and MySQL templates befor importing the onces included here.
 
-These are for use within the zabbix UI, for monitoring different services.
 
-#### Configurations
+### Agent Configs and Monitoring Scripts
 
-These are used by Zabbix agent to configure monitoring of various services.
+Configurations are for use by zabbix agent for monitoring a specific app
+or service.  Files prefixed with 'config-' should be installed in
+/etc/zabbix/zabbix_agentd.conf.d/
 
-#### Monitoring Scripts
-
-These are used by Zabbix agent to monitor various services.
+Monitoring scripts are also sometimes used by the zabbix agent to retrieve
+data.  Files prefixed with 'monitor-' should be installed in
+/etc/zabbix/scripts/
 
 
 vic garcia | vicg4rcia.com
