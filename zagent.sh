@@ -3,7 +3,7 @@
 # zagent.sh - install and configure zabbix agent
 
 # install zabbix agent
-add-apt-repository ppa:pbardov/zabbix -y && apt-get -qq -y update
+apt-add-repository ppa:pbardov/zabbix -y && apt-get -qq -y update
 apt-get -y install zabbix-agent
 
 # add zabbix user to the 'adm' group (necessary for log monitoring)
