@@ -35,11 +35,12 @@ curl -o /etc/zabbix/zabbix_agentd.conf.d/config-mysql.conf \
 
 # get settings to use to configure the agent from user
 echo -e "What's the IP for the Zabbix server?"
-read ZABBIX_SERVER_IP
+read ZABBIX_SERVER_IP < /dev/tty
 echo -e "What's the IP for this server to listen on?"
-read THIS_SERVER_IP
+read THIS_SERVER_IP < /dev/tty
 echo -e "What's this server's hostname that Zabbix uses?"
 read THIS_SERVER_HOSTNAME
+
 echo -e ""
 
 # add configure zabbix agent
