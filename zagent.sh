@@ -2,6 +2,9 @@
 
 # zagent.sh - install and configure zabbix agent
 
+# install apt-add-repository tool
+apt-get -qq -y install python-software-properties
+
 # install zabbix agent
 apt-add-repository ppa:pbardov/zabbix -y && apt-get -qq -y update
 apt-get -y install zabbix-agent
