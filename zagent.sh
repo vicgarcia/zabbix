@@ -39,9 +39,7 @@ read ZABBIX_SERVER_IP < /dev/tty
 echo -e "What's the IP for this server to listen on?"
 read THIS_SERVER_IP < /dev/tty
 echo -e "What's this server's hostname that Zabbix uses?"
-read THIS_SERVER_HOSTNAME
-
-echo -e ""
+read THIS_SERVER_HOSTNAME < /dev/tty
 
 # add configure zabbix agent
 cat > /etc/zabbix/zabbix_agentd.conf << DELIM
