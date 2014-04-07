@@ -215,9 +215,11 @@ echo -e "\nGet started by loading this server in the browser to access the Zabbi
 echo -e "\nThe default username and password is :  Admin : zabbix"
 echo -e "\nYour postgres zabbix user password is :  $ZABBIX_DB_PASSWORD"
 echo -e "\nIn order to continue, you will need to enable the firewall and reboot"
-echo -e "\nthe server.  You can do this by running this command :"
-echo
-echo -e "\n  ufw enable && shutdown -r now"
+echo -e "\nthe server.  You can do this by :"
+echo -e "\n"
+echo -e "\n  ufw enable"
+echo -e "\n"
+echo -e "\n  shutdown -r now"
 echo
 
 #  vic garcia | vicg4rcia.com
