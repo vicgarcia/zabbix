@@ -31,15 +31,17 @@ curl -o /etc/zabbix/scripts/monitor-nginx.sh \
     https://raw.githubusercontent.com/vicgarcia/zabbix-scripts/master/monitor-nginx.sh
 chmod +x /etc/zabbix/scripts/monitor-nginx.sh
 
-# install zabbix monitoring configurations for individual services
+# install mysql monitoring ...
 curl -o /etc/zabbix/zabbix_agentd.conf.d/config-mysql.conf \
     https://raw.githubusercontent.com/vicgarcia/zabbix-scripts/master/config-mysql.conf
 
 # install postgres monitoring ...
 curl -o /etc/zabbix/zabbix_agentd.conf.d/config-pgsql.conf \
     https://raw.githubusercontent.com/vicgarcia/zabbix-scripts/master/config-pgsql.conf
-curl -o /etc/zabbix/scripts/monitor-pgsql.sh \
-    https://raw.githubusercontent.com/vicgarcia/zabbix-scripts/master/monitor-pgsql.sh
+curl -o /etc/zabbix/scripts/monitor-pgsql-find-dbname.sh \
+    https://raw.githubusercontent.com/vicgarcia/zabbix-scripts/master/monitor-pgsql-find-dbname.sh
+curl -o /etc/zabbix/scripts/monitor-pgsql-find-dbname-table.sh \
+    https://raw.githubusercontent.com/vicgarcia/zabbix-scripts/master/monitor-pgsql-find-dbname-table.sh
 
 # get settings to use to configure the agent from user
 echo -e "What's the IP for the Zabbix server?"
