@@ -587,7 +587,7 @@ It requires user parameter mysql.status[*], which is defined in userparameter_my
     </templates>
     <triggers>
         <trigger>
-            <expression>{Template App MySQL:mysql.ping.last(0)}=0</expression>
+            <expression>{Template App MySQL:mysql.ping[{$MYUSER},{$MYPASS}].last(0)}=0</expression>
             <name>MySQL is down</name>
             <url/>
             <status>0</status>
@@ -625,7 +625,7 @@ It requires user parameter mysql.status[*], which is defined in userparameter_my
                     <type>0</type>
                     <item>
                         <host>Template App MySQL</host>
-                        <key>mysql.status[Bytes_received]</key>
+                        <key>mysql.status[{$MYUSER},{$MYPASS},Bytes_received]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -637,7 +637,7 @@ It requires user parameter mysql.status[*], which is defined in userparameter_my
                     <type>0</type>
                     <item>
                         <host>Template App MySQL</host>
-                        <key>mysql.status[Bytes_sent]</key>
+                        <key>mysql.status[{$MYUSER},{$MYPASS},Bytes_sent]</key>
                     </item>
                 </graph_item>
             </graph_items>
@@ -669,7 +669,7 @@ It requires user parameter mysql.status[*], which is defined in userparameter_my
                     <type>0</type>
                     <item>
                         <host>Template App MySQL</host>
-                        <key>mysql.status[Com_commit]</key>
+                        <key>mysql.status[{$MYUSER},{$MYPASS},Com_commit]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -681,7 +681,7 @@ It requires user parameter mysql.status[*], which is defined in userparameter_my
                     <type>0</type>
                     <item>
                         <host>Template App MySQL</host>
-                        <key>mysql.status[Com_update]</key>
+                        <key>mysql.status[{$MYUSER},{$MYPASS},Com_update]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -693,7 +693,7 @@ It requires user parameter mysql.status[*], which is defined in userparameter_my
                     <type>0</type>
                     <item>
                         <host>Template App MySQL</host>
-                        <key>mysql.status[Com_insert]</key>
+                        <key>mysql.status[{$MYUSER},{$MYPASS},Com_insert]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -705,7 +705,7 @@ It requires user parameter mysql.status[*], which is defined in userparameter_my
                     <type>0</type>
                     <item>
                         <host>Template App MySQL</host>
-                        <key>mysql.status[Com_rollback]</key>
+                        <key>mysql.status[{$MYUSER},{$MYPASS},Com_rollback]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -717,7 +717,7 @@ It requires user parameter mysql.status[*], which is defined in userparameter_my
                     <type>0</type>
                     <item>
                         <host>Template App MySQL</host>
-                        <key>mysql.status[Com_delete]</key>
+                        <key>mysql.status[{$MYUSER},{$MYPASS},Com_delete]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -729,7 +729,7 @@ It requires user parameter mysql.status[*], which is defined in userparameter_my
                     <type>0</type>
                     <item>
                         <host>Template App MySQL</host>
-                        <key>mysql.status[Com_select]</key>
+                        <key>mysql.status[{$MYUSER},{$MYPASS},Com_select]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -741,7 +741,7 @@ It requires user parameter mysql.status[*], which is defined in userparameter_my
                     <type>0</type>
                     <item>
                         <host>Template App MySQL</host>
-                        <key>mysql.status[Com_begin]</key>
+                        <key>mysql.status[{$MYUSER},{$MYPASS},Com_begin]</key>
                     </item>
                 </graph_item>
             </graph_items>
