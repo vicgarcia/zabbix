@@ -28,7 +28,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>mysql.status[{$MYROLE},{$MYPASS},Com_begin]</key>
+                    <key>mysql.status[{$MYUSER},{$MYPASS},Com_begin]</key>
                     <delay>60</delay>
                     <history>7</history>
                     <trends>365</trends>
@@ -67,7 +67,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>mysql.status[{$MYROLE},{$MYPASS},Bytes_received]</key>
+                    <key>mysql.status[{$MYUSER},{$MYPASS},Bytes_received]</key>
                     <delay>60</delay>
                     <history>7</history>
                     <trends>365</trends>
@@ -109,7 +109,7 @@ userparameter_mysql.conf.</description>
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>mysql.status[{$MYROLE},{$MYPASS},Bytes_sent]</key>
+                    <key>mysql.status[{$MYUSER},{$MYPASS},Bytes_sent]</key>
                     <delay>60</delay>
                     <history>7</history>
                     <trends>365</trends>
@@ -150,7 +150,7 @@ It requires user parameter mysql.status[*], which is defined in userparameter_my
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>mysql.status[{$MYROLE},{$MYPASS},Com_commit]</key>
+                    <key>mysql.status[{$MYUSER},{$MYPASS},Com_commit]</key>
                     <delay>60</delay>
                     <history>7</history>
                     <trends>365</trends>
@@ -189,7 +189,7 @@ It requires user parameter mysql.status[*], which is defined in userparameter_my
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>mysql.status[{$MYROLE},{$MYPASS},Com_delete]</key>
+                    <key>mysql.status[{$MYUSER},{$MYPASS},Com_delete]</key>
                     <delay>60</delay>
                     <history>7</history>
                     <trends>365</trends>
@@ -228,7 +228,7 @@ It requires user parameter mysql.status[*], which is defined in userparameter_my
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>mysql.status[{$MYROLE},{$MYPASS},Com_insert]</key>
+                    <key>mysql.status[{$MYUSER},{$MYPASS},Com_insert]</key>
                     <delay>60</delay>
                     <history>7</history>
                     <trends>365</trends>
@@ -267,7 +267,7 @@ It requires user parameter mysql.status[*], which is defined in userparameter_my
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>mysql.status[{$MYROLE},{$MYPASS},Questions]</key>
+                    <key>mysql.status[{$MYUSER},{$MYPASS},Questions]</key>
                     <delay>60</delay>
                     <history>7</history>
                     <trends>365</trends>
@@ -306,7 +306,7 @@ It requires user parameter mysql.status[*], which is defined in userparameter_my
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>mysql.status[{$MYROLE},{$MYPASS},Com_rollback]</key>
+                    <key>mysql.status[{$MYUSER},{$MYPASS},Com_rollback]</key>
                     <delay>60</delay>
                     <history>7</history>
                     <trends>365</trends>
@@ -345,7 +345,7 @@ It requires user parameter mysql.status[*], which is defined in userparameter_my
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>mysql.status[{$MYROLE},{$MYPASS},Com_select]</key>
+                    <key>mysql.status[{$MYUSER},{$MYPASS},Com_select]</key>
                     <delay>60</delay>
                     <history>7</history>
                     <trends>365</trends>
@@ -384,7 +384,7 @@ It requires user parameter mysql.status[*], which is defined in userparameter_my
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>mysql.status[{$MYROLE},{$MYPASS},Slow_queries]</key>
+                    <key>mysql.status[{$MYUSER},{$MYPASS},Slow_queries]</key>
                     <delay>60</delay>
                     <history>7</history>
                     <trends>365</trends>
@@ -423,7 +423,7 @@ It requires user parameter mysql.status[*], which is defined in userparameter_my
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>mysql.ping[{$MYROLE},{$MYPASS}]</key>
+                    <key>mysql.ping[{$MYUSER},{$MYPASS}]</key>
                     <delay>60</delay>
                     <history>7</history>
                     <trends>365</trends>
@@ -467,7 +467,7 @@ It requires user parameter mysql.status[*], which is defined in userparameter_my
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>mysql.status[{$MYROLE},{$MYPASS},Com_update]</key>
+                    <key>mysql.status[{$MYUSER},{$MYPASS},Com_update]</key>
                     <delay>60</delay>
                     <history>7</history>
                     <trends>365</trends>
@@ -506,7 +506,7 @@ It requires user parameter mysql.status[*], which is defined in userparameter_my
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>mysql.status[{$MYROLE},{$MYPASS},Uptime]</key>
+                    <key>mysql.status[{$MYUSER},{$MYPASS},Uptime]</key>
                     <delay>60</delay>
                     <history>7</history>
                     <trends>365</trends>
@@ -545,7 +545,7 @@ It requires user parameter mysql.status[*], which is defined in userparameter_my
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>mysql.version[{$MYROLE},{$MYPASS}]</key>
+                    <key>mysql.version[{$MYUSER},{$MYPASS}]</key>
                     <delay>3600</delay>
                     <history>7</history>
                     <trends>365</trends>
