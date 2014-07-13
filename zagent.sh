@@ -16,22 +16,30 @@ usermod -a -G adm zabbix
 mkdir -p /etc/zabbix/scripts
 
 # install redis monitor script from git repo with curl
+
+# install redis monitoring ...
+curl -o /etc/zabbix/zabbix_agentd.conf.d/config-redis.conf \
+    https://raw.githubusercontent.com/vicgarcia/zabbix-scripts/master/config-redis.conf
 curl -o /etc/zabbix/scripts/monitor-redis.pl \
     https://raw.githubusercontent.com/vicgarcia/zabbix-scripts/master/monitor-redis.pl
 chmod +x /etc/zabbix/scripts/monitor-redis.pl
 
-# install nginx monitor script from git repo with curl
+# install nginx monitoring ...
+curl -o /etc/zabbix/zabbix_agentd.conf.d/config-nginx.conf \
+    https://raw.githubusercontent.com/vicgarcia/zabbix-scripts/master/config-nginx.conf
 curl -o /etc/zabbix/scripts/monitor-nginx.sh \
     https://raw.githubusercontent.com/vicgarcia/zabbix-scripts/master/monitor-nginx.sh
 chmod +x /etc/zabbix/scripts/monitor-nginx.sh
 
 # install zabbix monitoring configurations for individual services
-curl -o /etc/zabbix/zabbix_agentd.conf.d/config-nginx.conf \
-    https://raw.githubusercontent.com/vicgarcia/zabbix-scripts/master/config-nginx.conf
-curl -o /etc/zabbix/zabbix_agentd.conf.d/config-redis.conf \
-    https://raw.githubusercontent.com/vicgarcia/zabbix-scripts/master/config-redis.conf
 curl -o /etc/zabbix/zabbix_agentd.conf.d/config-mysql.conf \
     https://raw.githubusercontent.com/vicgarcia/zabbix-scripts/master/config-mysql.conf
+
+# install postgres monitoring ...
+curl -o /etc/zabbix/zabbix_agentd.conf.d/config-pgsql.conf \
+    https://raw.githubusercontent.com/vicgarcia/zabbix-scripts/master/config-pgsql.conf
+curl -o /etc/zabbix/scripts/monitor-pgsql.sh \
+    https://raw.githubusercontent.com/vicgarcia/zabbix-scripts/master/monitor-pgsql.sh
 
 # get settings to use to configure the agent from user
 echo -e "What's the IP for the Zabbix server?"
@@ -64,4 +72,5 @@ service zabbix-agent restart
 #   http://addmoremem.blogspot.com/2010/10/zabbixs-template-to-monitor-redis.html
 #   https://github.com/jizhang/zabbix-templates
 #   http://www.hjort.co/2009/12/postgresql-monitoring-on-zabbix.html
+#   <ADD PGSQL LINK HERE>
 #
