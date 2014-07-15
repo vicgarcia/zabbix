@@ -28,7 +28,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>redis_stats[127.0.0.1,6379,blocked_clients]</key>
+                    <key>redis_stats[{$REDIS_HOST},{$REDIS_PORT},blocked_clients]</key>
                     <delay>30</delay>
                     <history>7</history>
                     <trends>365</trends>
@@ -67,7 +67,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>redis_stats[127.0.0.1,6379,connected_clients]</key>
+                    <key>redis_stats[{$REDIS_HOST},{$REDIS_PORT},connected_clients]</key>
                     <delay>30</delay>
                     <history>7</history>
                     <trends>365</trends>
@@ -106,7 +106,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>redis_stats[127.0.0.1,6379,connected_slave]</key>
+                    <key>redis_stats[{$REDIS_HOST},{$REDIS_PORT},connected_slave]</key>
                     <delay>30</delay>
                     <history>7</history>
                     <trends>365</trends>
@@ -145,7 +145,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>redis_stats[127.0.0.1,6379,connections_per_sec]</key>
+                    <key>redis_stats[{$REDIS_HOST},{$REDIS_PORT},connections_per_sec]</key>
                     <delay>30</delay>
                     <history>7</history>
                     <trends>365</trends>
@@ -184,7 +184,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>redis_stats[127.0.0.1,6379,database]</key>
+                    <key>redis_stats[{$REDIS_HOST},{$REDIS_PORT},database]</key>
                     <delay>600</delay>
                     <history>7</history>
                     <trends>365</trends>
@@ -223,7 +223,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>redis_stats[127.0.0.1,6379,db0_expires]</key>
+                    <key>redis_stats[{$REDIS_HOST},{$REDIS_PORT},db0_expires]</key>
                     <delay>30</delay>
                     <history>7</history>
                     <trends>365</trends>
@@ -262,7 +262,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>redis_stats[127.0.0.1,6379,db0_keys]</key>
+                    <key>redis_stats[{$REDIS_HOST},{$REDIS_PORT},db0_keys]</key>
                     <delay>30</delay>
                     <history>7</history>
                     <trends>365</trends>
@@ -301,7 +301,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>redis_stats[127.0.0.1,6379,expired_keys]</key>
+                    <key>redis_stats[{$REDIS_HOST},{$REDIS_PORT},expired_keys]</key>
                     <delay>30</delay>
                     <history>7</history>
                     <trends>365</trends>
@@ -340,7 +340,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>redis_stats[127.0.0.1,6379,last_save_time]</key>
+                    <key>redis_stats[{$REDIS_HOST},{$REDIS_PORT},last_save_time]</key>
                     <delay>600</delay>
                     <history>3</history>
                     <trends>365</trends>
@@ -379,7 +379,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>net.tcp.port[127.0.0.1,6379]</key>
+                    <key>net.tcp.port[{$REDIS_HOST},{$REDIS_PORT}]</key>
                     <delay>30</delay>
                     <history>7</history>
                     <trends>365</trends>
@@ -418,7 +418,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>redis_stats[127.0.0.1,6379,requests_per_sec]</key>
+                    <key>redis_stats[{$REDIS_HOST},{$REDIS_PORT},requests_per_sec]</key>
                     <delay>30</delay>
                     <history>7</history>
                     <trends>365</trends>
@@ -457,7 +457,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>redis_stats[127.0.0.1,6379,role]</key>
+                    <key>redis_stats[{$REDIS_HOST},{$REDIS_PORT},role]</key>
                     <delay>600</delay>
                     <history>3</history>
                     <trends>365</trends>
@@ -535,7 +535,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>redis_stats[127.0.0.1,6379,total_expires]</key>
+                    <key>redis_stats[{$REDIS_HOST},{$REDIS_PORT},total_expires]</key>
                     <delay>30</delay>
                     <history>7</history>
                     <trends>365</trends>
@@ -574,7 +574,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>redis_stats[127.0.0.1,6379,total_keys]</key>
+                    <key>redis_stats[{$REDIS_HOST},{$REDIS_PORT},total_keys]</key>
                     <delay>30</delay>
                     <history>7</history>
                     <trends>365</trends>
@@ -613,7 +613,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>redis_stats[127.0.0.1,6379,uptime_in_seconds]</key>
+                    <key>redis_stats[{$REDIS_HOST},{$REDIS_PORT},uptime_in_seconds]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>365</trends>
@@ -652,7 +652,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>redis_stats[127.0.0.1,6379,used_memory]</key>
+                    <key>redis_stats[{$REDIS_HOST},{$REDIS_PORT},used_memory]</key>
                     <delay>30</delay>
                     <history>7</history>
                     <trends>365</trends>
@@ -687,15 +687,24 @@
                 </item>
             </items>
             <discovery_rules/>
-            <macros/>
+            <macros>
+                <macro>
+                    <macro>{$REDIS_HOST}</macro>
+                    <value>127.0.0.1</value>
+                </macro>
+                <macro>
+                    <macro>{$REDIS_PORT}</macro>
+                    <value>6379</value>
+                </macro>
+            </macros>
             <templates/>
             <screens/>
         </template>
     </templates>
     <triggers>
         <trigger>
-            <expression>{Template App Redis:net.tcp.port[127.0.0.1,6379].last(0)}=0</expression>
-            <name>Redis port 6379 is not running</name>
+            <expression>{Template App Redis:net.tcp.port[{$REDIS_HOST},{$REDIS_PORT}].last(0)}=0</expression>
+            <name>Redis port {$REDIS_PORT} is not running</name>
             <url/>
             <status>0</status>
             <priority>3</priority>
@@ -732,7 +741,7 @@
                     <type>0</type>
                     <item>
                         <host>Template App Redis</host>
-                        <key>redis_stats[127.0.0.1,6379,requests_per_sec]</key>
+                        <key>redis_stats[{$REDIS_HOST},{$REDIS_PORT},requests_per_sec]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -744,7 +753,7 @@
                     <type>0</type>
                     <item>
                         <host>Template App Redis</host>
-                        <key>redis_stats[127.0.0.1,6379,connected_slave]</key>
+                        <key>redis_stats[{$REDIS_HOST},{$REDIS_PORT},connected_slave]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -756,7 +765,7 @@
                     <type>0</type>
                     <item>
                         <host>Template App Redis</host>
-                        <key>redis_stats[127.0.0.1,6379,blocked_clients]</key>
+                        <key>redis_stats[{$REDIS_HOST},{$REDIS_PORT},blocked_clients]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -768,7 +777,7 @@
                     <type>0</type>
                     <item>
                         <host>Template App Redis</host>
-                        <key>redis_stats[127.0.0.1,6379,connected_clients]</key>
+                        <key>redis_stats[{$REDIS_HOST},{$REDIS_PORT},connected_clients]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -780,7 +789,7 @@
                     <type>0</type>
                     <item>
                         <host>Template App Redis</host>
-                        <key>redis_stats[127.0.0.1,6379,connections_per_sec]</key>
+                        <key>redis_stats[{$REDIS_HOST},{$REDIS_PORT},connections_per_sec]</key>
                     </item>
                 </graph_item>
             </graph_items>
@@ -812,7 +821,7 @@
                     <type>0</type>
                     <item>
                         <host>Template App Redis</host>
-                        <key>redis_stats[127.0.0.1,6379,db0_keys]</key>
+                        <key>redis_stats[{$REDIS_HOST},{$REDIS_PORT},db0_keys]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -824,7 +833,7 @@
                     <type>0</type>
                     <item>
                         <host>Template App Redis</host>
-                        <key>redis_stats[127.0.0.1,6379,db0_expires]</key>
+                        <key>redis_stats[{$REDIS_HOST},{$REDIS_PORT},db0_expires]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -836,7 +845,7 @@
                     <type>0</type>
                     <item>
                         <host>Template App Redis</host>
-                        <key>redis_stats[127.0.0.1,6379,total_expires]</key>
+                        <key>redis_stats[{$REDIS_HOST},{$REDIS_PORT},total_expires]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -848,7 +857,7 @@
                     <type>0</type>
                     <item>
                         <host>Template App Redis</host>
-                        <key>redis_stats[127.0.0.1,6379,total_keys]</key>
+                        <key>redis_stats[{$REDIS_HOST},{$REDIS_PORT},total_keys]</key>
                     </item>
                 </graph_item>
             </graph_items>
@@ -880,7 +889,7 @@
                     <type>0</type>
                     <item>
                         <host>Template App Redis</host>
-                        <key>redis_stats[127.0.0.1,6379,used_memory]</key>
+                        <key>redis_stats[{$REDIS_HOST},{$REDIS_PORT},used_memory]</key>
                     </item>
                 </graph_item>
             </graph_items>
