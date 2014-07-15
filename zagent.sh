@@ -42,6 +42,8 @@ curl -o /etc/zabbix/scripts/monitor-pgsql-find-dbname.sh \
     https://raw.githubusercontent.com/vicgarcia/zabbix-scripts/master/monitor-pgsql-find-dbname.sh
 curl -o /etc/zabbix/scripts/monitor-pgsql-find-dbname-table.sh \
     https://raw.githubusercontent.com/vicgarcia/zabbix-scripts/master/monitor-pgsql-find-dbname-table.sh
+chmod +x /etc/zabbix/scripts/monitor-pgsql-find-dbname.sh
+chmod +x /etc/zabbix/scripts/monitor-pgsql-find-dbname-table.sh
 
 # get settings to use to configure the agent from user
 echo -e "What's the IP for the Zabbix server?"
@@ -66,6 +68,9 @@ ServerActive=$ZABBIX_SERVER_IP
 Include=/etc/zabbix/zabbix_agentd.conf.d/
 DELIM
 
+# enable zabbix agent start on boot
+update-rc.d zabbix-server defaults
+
 # restart zabbix agent with new settings
 service zabbix-agent restart
 
@@ -74,5 +79,5 @@ service zabbix-agent restart
 #   http://addmoremem.blogspot.com/2010/10/zabbixs-template-to-monitor-redis.html
 #   https://github.com/jizhang/zabbix-templates
 #   http://www.hjort.co/2009/12/postgresql-monitoring-on-zabbix.html
-#   <ADD PGSQL LINK HERE>
+#   http://pg-monz.github.io/pg_monz/index-en.html
 #
