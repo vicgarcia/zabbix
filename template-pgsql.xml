@@ -31,7 +31,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>psql.active_connections[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE}]</key>
+                    <key>psql.active_connections[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE}]</key>
                     <delay>300</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -70,7 +70,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>psql.buffers_alloc[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE}]</key>
+                    <key>psql.buffers_alloc[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE}]</key>
                     <delay>300</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -109,7 +109,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>psql.buffers_backend[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE}]</key>
+                    <key>psql.buffers_backend[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE}]</key>
                     <delay>300</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -148,7 +148,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>psql.buffers_backend_fsync[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE}]</key>
+                    <key>psql.buffers_backend_fsync[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE}]</key>
                     <delay>300</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -187,7 +187,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>psql.buffers_checkpoint[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE}]</key>
+                    <key>psql.buffers_checkpoint[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE}]</key>
                     <delay>300</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -226,7 +226,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>psql.buffers_clean[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE}]</key>
+                    <key>psql.buffers_clean[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE}]</key>
                     <delay>300</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -265,7 +265,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>psql.checkpoints_req[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE}]</key>
+                    <key>psql.checkpoints_req[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE}]</key>
                     <delay>300</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -304,7 +304,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>psql.checkpoints_timed[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE}]</key>
+                    <key>psql.checkpoints_timed[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE}]</key>
                     <delay>300</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -343,7 +343,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>psql.tx_committed[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE}]</key>
+                    <key>psql.tx_committed[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE}]</key>
                     <delay>300</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -382,7 +382,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>psql.server_connections[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE}]</key>
+                    <key>psql.server_connections[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE}]</key>
                     <delay>300</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -421,7 +421,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>psql.idle_connections[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE}]</key>
+                    <key>psql.idle_connections[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE}]</key>
                     <delay>300</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -460,7 +460,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>psql.idle_tx_connections[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE}]</key>
+                    <key>psql.idle_tx_connections[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE}]</key>
                     <delay>300</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -499,7 +499,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>psql.locks_waiting[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE}]</key>
+                    <key>psql.locks_waiting[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE}]</key>
                     <delay>300</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -538,7 +538,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>logrt[&quot;{$PGLOGDIR}/postgresql-.*\.log&quot;,&quot;PANIC|FATAL|ERROR|[Ee]rror&quot;]</key>
+                    <key>logrt[&quot;{$PGSQL_LOGDIR}/postgresql-.*\.log&quot;,&quot;PANIC|FATAL|ERROR|[Ee]rror&quot;]</key>
                     <delay>1</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -577,7 +577,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>psql.server_maxcon[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE}]</key>
+                    <key>psql.server_maxcon[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE}]</key>
                     <delay>300</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -616,7 +616,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>psql.maxwritten_clean[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE}]</key>
+                    <key>psql.maxwritten_clean[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE}]</key>
                     <delay>300</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -694,7 +694,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>psql.running[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE}]</key>
+                    <key>psql.running[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE}]</key>
                     <delay>60</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -733,7 +733,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>psql.tx_rolledback[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE}]</key>
+                    <key>psql.tx_rolledback[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE}]</key>
                     <delay>300</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -772,7 +772,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>psql.slow_dml_queries[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE},{$PGSLOWQUERY_THRESHOLD}]</key>
+                    <key>psql.slow_dml_queries[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE},{$PGSQL_SLOWQUERY_THRESHOLD}]</key>
                     <delay>300</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -811,7 +811,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>psql.slow_queries[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE},{$PGSLOWQUERY_THRESHOLD}]</key>
+                    <key>psql.slow_queries[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE},{$PGSQL_SLOWQUERY_THRESHOLD}]</key>
                     <delay>300</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -850,7 +850,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>psql.slow_select_queries[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE},{$PGSLOWQUERY_THRESHOLD}]</key>
+                    <key>psql.slow_select_queries[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE},{$PGSQL_SLOWQUERY_THRESHOLD}]</key>
                     <delay>300</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -890,7 +890,7 @@
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>db_table.list.discovery[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE},{$PGSCRIPTDIR}]</key>
+                    <key>db_table.list.discovery[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE},{$PGSQL_SCRIPTDIR}]</key>
                     <delay>3600</delay>
                     <status>1</status>
                     <allowed_hosts/>
@@ -917,7 +917,7 @@
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>psql.table_analyze_count[{$PGHOST},{$PGPORT},{$PGUSER},{#DBNAME},{#SCHEMANAME},{#TABLENAME}]</key>
+                            <key>psql.table_analyze_count[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{#DBNAME},{#SCHEMANAME},{#TABLENAME}]</key>
                             <delay>300</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -956,7 +956,7 @@
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>psql.table_autoanalyze_count[{$PGHOST},{$PGPORT},{$PGUSER},{#DBNAME},{#SCHEMANAME},{#TABLENAME}]</key>
+                            <key>psql.table_autoanalyze_count[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{#DBNAME},{#SCHEMANAME},{#TABLENAME}]</key>
                             <delay>300</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -995,7 +995,7 @@
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>psql.table_autovacuum_count[{$PGHOST},{$PGPORT},{$PGUSER},{#DBNAME},{#SCHEMANAME},{#TABLENAME}]</key>
+                            <key>psql.table_autovacuum_count[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{#DBNAME},{#SCHEMANAME},{#TABLENAME}]</key>
                             <delay>300</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -1034,7 +1034,7 @@
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>psql.table_cachehit_ratio[{$PGHOST},{$PGPORT},{$PGUSER},{#DBNAME},{#SCHEMANAME},{#TABLENAME}]</key>
+                            <key>psql.table_cachehit_ratio[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{#DBNAME},{#SCHEMANAME},{#TABLENAME}]</key>
                             <delay>300</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -1073,7 +1073,7 @@
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>psql.table_n_dead_tup[{$PGHOST},{$PGPORT},{$PGUSER},{#DBNAME},{#SCHEMANAME},{#TABLENAME}]</key>
+                            <key>psql.table_n_dead_tup[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{#DBNAME},{#SCHEMANAME},{#TABLENAME}]</key>
                             <delay>300</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -1112,7 +1112,7 @@
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>psql.table_n_tup_del[{$PGHOST},{$PGPORT},{$PGUSER},{#DBNAME},{#SCHEMANAME},{#TABLENAME}]</key>
+                            <key>psql.table_n_tup_del[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{#DBNAME},{#SCHEMANAME},{#TABLENAME}]</key>
                             <delay>300</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -1151,7 +1151,7 @@
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>psql.table_n_tup_hot_upd[{$PGHOST},{$PGPORT},{$PGUSER},{#DBNAME},{#SCHEMANAME},{#TABLENAME}]</key>
+                            <key>psql.table_n_tup_hot_upd[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{#DBNAME},{#SCHEMANAME},{#TABLENAME}]</key>
                             <delay>300</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -1190,7 +1190,7 @@
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>psql.table_idx_scan[{$PGHOST},{$PGPORT},{$PGUSER},{#DBNAME},{#SCHEMANAME},{#TABLENAME}]</key>
+                            <key>psql.table_idx_scan[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{#DBNAME},{#SCHEMANAME},{#TABLENAME}]</key>
                             <delay>300</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -1229,7 +1229,7 @@
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>psql.table_idx_tup_fetch[{$PGHOST},{$PGPORT},{$PGUSER},{#DBNAME},{#SCHEMANAME},{#TABLENAME}]</key>
+                            <key>psql.table_idx_tup_fetch[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{#DBNAME},{#SCHEMANAME},{#TABLENAME}]</key>
                             <delay>300</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -1268,7 +1268,7 @@
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>psql.table_n_tup_ins[{$PGHOST},{$PGPORT},{$PGUSER},{#DBNAME},{#SCHEMANAME},{#TABLENAME}]</key>
+                            <key>psql.table_n_tup_ins[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{#DBNAME},{#SCHEMANAME},{#TABLENAME}]</key>
                             <delay>300</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -1307,7 +1307,7 @@
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>psql.table_n_live_tup[{$PGHOST},{$PGPORT},{$PGUSER},{#DBNAME},{#SCHEMANAME},{#TABLENAME}]</key>
+                            <key>psql.table_n_live_tup[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{#DBNAME},{#SCHEMANAME},{#TABLENAME}]</key>
                             <delay>300</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -1346,7 +1346,7 @@
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>psql.table_seq_scan[{$PGHOST},{$PGPORT},{$PGUSER},{#DBNAME},{#SCHEMANAME},{#TABLENAME}]</key>
+                            <key>psql.table_seq_scan[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{#DBNAME},{#SCHEMANAME},{#TABLENAME}]</key>
                             <delay>300</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -1385,7 +1385,7 @@
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>psql.table_n_tup_upd[{$PGHOST},{$PGPORT},{$PGUSER},{#DBNAME},{#SCHEMANAME},{#TABLENAME}]</key>
+                            <key>psql.table_n_tup_upd[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{#DBNAME},{#SCHEMANAME},{#TABLENAME}]</key>
                             <delay>300</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -1424,7 +1424,7 @@
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>psql.table_vacuum_count[{$PGHOST},{$PGPORT},{$PGUSER},{#DBNAME},{#SCHEMANAME},{#TABLENAME}]</key>
+                            <key>psql.table_vacuum_count[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{#DBNAME},{#SCHEMANAME},{#TABLENAME}]</key>
                             <delay>300</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -1466,7 +1466,7 @@
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>db.list.discovery[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE},{$PGSCRIPTDIR}]</key>
+                    <key>db.list.discovery[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE},{$PGSQL_SCRIPTDIR}]</key>
                     <delay>3600</delay>
                     <status>0</status>
                     <allowed_hosts/>
@@ -1493,7 +1493,7 @@
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>psql.db_connections[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE},{#DBNAME}]</key>
+                            <key>psql.db_connections[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE},{#DBNAME}]</key>
                             <delay>300</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -1532,7 +1532,7 @@
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>psql.cachehit_ratio[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE},{#DBNAME}]</key>
+                            <key>psql.cachehit_ratio[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE},{#DBNAME}]</key>
                             <delay>300</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -1571,7 +1571,7 @@
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>psql.db_tx_committed[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE},{#DBNAME}]</key>
+                            <key>psql.db_tx_committed[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE},{#DBNAME}]</key>
                             <delay>300</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -1610,7 +1610,7 @@
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>psql.db_size[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE},{#DBNAME}]</key>
+                            <key>psql.db_size[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE},{#DBNAME}]</key>
                             <delay>300</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -1649,7 +1649,7 @@
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>psql.db_deadlocks[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE},{#DBNAME}]</key>
+                            <key>psql.db_deadlocks[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE},{#DBNAME}]</key>
                             <delay>300</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -1688,7 +1688,7 @@
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>psql.db_tx_rolledback[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE},{#DBNAME}]</key>
+                            <key>psql.db_tx_rolledback[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE},{#DBNAME}]</key>
                             <delay>300</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -1727,7 +1727,7 @@
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>psql.db_temp_bytes[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE},{#DBNAME}]</key>
+                            <key>psql.db_temp_bytes[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE},{#DBNAME}]</key>
                             <delay>300</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -1766,7 +1766,7 @@
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>psql.db_deleted[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE},{#DBNAME}]</key>
+                            <key>psql.db_deleted[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE},{#DBNAME}]</key>
                             <delay>300</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -1805,7 +1805,7 @@
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>psql.db_fetched[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE},{#DBNAME}]</key>
+                            <key>psql.db_fetched[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE},{#DBNAME}]</key>
                             <delay>300</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -1844,7 +1844,7 @@
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>psql.db_inserted[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE},{#DBNAME}]</key>
+                            <key>psql.db_inserted[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE},{#DBNAME}]</key>
                             <delay>300</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -1883,7 +1883,7 @@
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>psql.db_returned[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE},{#DBNAME}]</key>
+                            <key>psql.db_returned[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE},{#DBNAME}]</key>
                             <delay>300</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -1922,7 +1922,7 @@
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>psql.db_updated[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE},{#DBNAME}]</key>
+                            <key>psql.db_updated[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE},{#DBNAME}]</key>
                             <delay>300</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -1958,7 +1958,7 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Template App PostgreSQL:psql.cachehit_ratio[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE},{#DBNAME}].avg(300)}&lt;{$PGCACHEHIT_THRESHOLD}</expression>
+                            <expression>{Template App PostgreSQL:psql.cachehit_ratio[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE},{#DBNAME}].avg(300)}&lt;{$PGSQL_CACHEHIT_THRESHOLD}</expression>
                             <name>[{#DBNAME}] Cache hit ratio is too low</name>
                             <url/>
                             <status>0</status>
@@ -1967,7 +1967,7 @@
                             <type>0</type>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{Template App PostgreSQL:psql.db_size[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE},{#DBNAME}].last(0)}&gt;{$PGDBSIZE_THRESHOLD}</expression>
+                            <expression>{Template App PostgreSQL:psql.db_size[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE},{#DBNAME}].last(0)}&gt;{$PGSQL_DBSIZE_THRESHOLD}</expression>
                             <name>[{#DBNAME}] DB Size is too large</name>
                             <url/>
                             <status>0</status>
@@ -1976,7 +1976,7 @@
                             <type>0</type>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{Template App PostgreSQL:psql.db_deadlocks[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE},{#DBNAME}].last(0)}&gt;{$PGDEADLOCK_THRESHOLD}</expression>
+                            <expression>{Template App PostgreSQL:psql.db_deadlocks[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE},{#DBNAME}].last(0)}&gt;{$PGSQL_DEADLOCK_THRESHOLD}</expression>
                             <name>[{#DBNAME}] Deadlocks occurred too frequently</name>
                             <url/>
                             <status>0</status>
@@ -1985,7 +1985,7 @@
                             <type>0</type>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{Template App PostgreSQL:psql.db_temp_bytes[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE},{#DBNAME}].last(0)}&gt;{$PGTEMPBYTES_THRESHOLD}</expression>
+                            <expression>{Template App PostgreSQL:psql.db_temp_bytes[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE},{#DBNAME}].last(0)}&gt;{$PGSQL_TEMPBYTES_THRESHOLD}</expression>
                             <name>[{#DBNAME}] Too many temp bytes</name>
                             <url/>
                             <status>0</status>
@@ -2022,7 +2022,7 @@
                                     <type>0</type>
                                     <item>
                                         <host>Template App PostgreSQL</host>
-                                        <key>psql.cachehit_ratio[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE},{#DBNAME}]</key>
+                                        <key>psql.cachehit_ratio[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE},{#DBNAME}]</key>
                                     </item>
                                 </graph_item>
                             </graph_items>
@@ -2054,7 +2054,7 @@
                                     <type>0</type>
                                     <item>
                                         <host>Template App PostgreSQL</host>
-                                        <key>psql.db_size[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE},{#DBNAME}]</key>
+                                        <key>psql.db_size[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE},{#DBNAME}]</key>
                                     </item>
                                 </graph_item>
                             </graph_items>
@@ -2086,7 +2086,7 @@
                                     <type>0</type>
                                     <item>
                                         <host>Template App PostgreSQL</host>
-                                        <key>psql.db_deadlocks[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE},{#DBNAME}]</key>
+                                        <key>psql.db_deadlocks[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE},{#DBNAME}]</key>
                                     </item>
                                 </graph_item>
                             </graph_items>
@@ -2118,7 +2118,7 @@
                                     <type>0</type>
                                     <item>
                                         <host>Template App PostgreSQL</host>
-                                        <key>psql.db_tx_committed[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE},{#DBNAME}]</key>
+                                        <key>psql.db_tx_committed[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE},{#DBNAME}]</key>
                                     </item>
                                 </graph_item>
                                 <graph_item>
@@ -2130,7 +2130,7 @@
                                     <type>0</type>
                                     <item>
                                         <host>Template App PostgreSQL</host>
-                                        <key>psql.db_tx_rolledback[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE},{#DBNAME}]</key>
+                                        <key>psql.db_tx_rolledback[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE},{#DBNAME}]</key>
                                     </item>
                                 </graph_item>
                             </graph_items>
@@ -2162,7 +2162,7 @@
                                     <type>0</type>
                                     <item>
                                         <host>Template App PostgreSQL</host>
-                                        <key>psql.db_temp_bytes[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE},{#DBNAME}]</key>
+                                        <key>psql.db_temp_bytes[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE},{#DBNAME}]</key>
                                     </item>
                                 </graph_item>
                             </graph_items>
@@ -2172,59 +2172,59 @@
             </discovery_rules>
             <macros>
                 <macro>
-                    <macro>{$PGCACHEHIT_THRESHOLD}</macro>
+                    <macro>{$PGSQL_CACHEHIT_THRESHOLD}</macro>
                     <value>90</value>
                 </macro>
                 <macro>
-                    <macro>{$PGCHECKPOINTS_THRESHOLD}</macro>
+                    <macro>{$PGSQL_CHECKPOINTS_THRESHOLD}</macro>
                     <value>10</value>
                 </macro>
                 <macro>
-                    <macro>{$PGCONNECTIONS_THRESHOLD}</macro>
+                    <macro>{$PGSQL_CONNECTIONS_THRESHOLD}</macro>
                     <value>95</value>
                 </macro>
                 <macro>
-                    <macro>{$PGDATABASE}</macro>
+                    <macro>{$PGSQL_DATABASE}</macro>
                     <value>postgres</value>
                 </macro>
                 <macro>
-                    <macro>{$PGDBSIZE_THRESHOLD}</macro>
+                    <macro>{$PGSQL_DBSIZE_THRESHOLD}</macro>
                     <value>1073741824</value>
                 </macro>
                 <macro>
-                    <macro>{$PGDEADLOCK_THRESHHOLD}</macro>
+                    <macro>{$PGSQL_DEADLOCK_THRESHHOLD}</macro>
                     <value>0</value>
                 </macro>
                 <macro>
-                    <macro>{$PGDEADLOCK_THRESHOLD}</macro>
+                    <macro>{$PGSQL_DEADLOCK_THRESHOLD}</macro>
                     <value>0</value>
                 </macro>
                 <macro>
-                    <macro>{$PGHOST}</macro>
+                    <macro>{$PGSQL_HOST}</macro>
                     <value>127.0.0.1</value>
                 </macro>
                 <macro>
-                    <macro>{$PGLOGDIR}</macro>
+                    <macro>{$PGSQL_LOGDIR}</macro>
                     <value>/usr/local/pgsql/data/pg_log</value>
                 </macro>
                 <macro>
-                    <macro>{$PGPORT}</macro>
+                    <macro>{$PGSQL_PORT}</macro>
                     <value>5432</value>
                 </macro>
                 <macro>
-                    <macro>{$PGUSER}</macro>
+                    <macro>{$PGSQL_USER}</macro>
                     <value>postgres</value>
                 </macro>
                 <macro>
-                    <macro>{$PGSCRIPTDIR}</macro>
+                    <macro>{$PGSQL_SCRIPTDIR}</macro>
                     <value>/usr/local/bin</value>
                 </macro>
                 <macro>
-                    <macro>{$PGSLOWQUERY_THRESHOLD}</macro>
+                    <macro>{$PGSQL_SLOWQUERY_THRESHOLD}</macro>
                     <value>10</value>
                 </macro>
                 <macro>
-                    <macro>{$PGTEMPBYTES_THRESHOLD}</macro>
+                    <macro>{$PGSQL_TEMPBYTES_THRESHOLD}</macro>
                     <value>8388608</value>
                 </macro>
             </macros>
@@ -2282,7 +2282,7 @@
     </templates>
     <triggers>
         <trigger>
-            <expression>{Template App PostgreSQL:psql.checkpoints_req[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE}].last(0)}&gt;{$PGCHECKPOINTS_THRESHOLD}</expression>
+            <expression>{Template App PostgreSQL:psql.checkpoints_req[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE}].last(0)}&gt;{$PGSQL_CHECKPOINTS_THRESHOLD}</expression>
             <name>Checkpoints are occurring too frequently</name>
             <url/>
             <status>0</status>
@@ -2292,7 +2292,7 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{Template App PostgreSQL:psql.server_connections[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE}].last(0)}&gt;{$PGCONNECTIONS_THRESHOLD}</expression>
+            <expression>{Template App PostgreSQL:psql.server_connections[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE}].last(0)}&gt;{$PGSQL_CONNECTIONS_THRESHOLD}</expression>
             <name>Many connections are forked.</name>
             <url/>
             <status>0</status>
@@ -2312,7 +2312,7 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{Template App PostgreSQL:psql.running[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE}].last(0)}#0</expression>
+            <expression>{Template App PostgreSQL:psql.running[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE}].last(0)}#0</expression>
             <name>PostgreSQL service is not running.</name>
             <url/>
             <status>0</status>
@@ -2322,7 +2322,7 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{Template App PostgreSQL:psql.slow_queries[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE},{$PGSLOWQUERY_THRESHOLD}].last(0)}&gt;{$PGSLOWQUERY_THRESHOLD}</expression>
+            <expression>{Template App PostgreSQL:psql.slow_queries[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE},{$PGSQL_SLOWQUERY_THRESHOLD}].last(0)}&gt;{$PGSQL_SLOWQUERY_THRESHOLD}</expression>
             <name>Too many slow queries</name>
             <url/>
             <status>0</status>
@@ -2360,7 +2360,7 @@
                     <type>0</type>
                     <item>
                         <host>Template App PostgreSQL</host>
-                        <key>psql.checkpoints_req[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE}]</key>
+                        <key>psql.checkpoints_req[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE}]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -2372,7 +2372,7 @@
                     <type>0</type>
                     <item>
                         <host>Template App PostgreSQL</host>
-                        <key>psql.checkpoints_timed[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE}]</key>
+                        <key>psql.checkpoints_timed[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE}]</key>
                     </item>
                 </graph_item>
             </graph_items>
@@ -2404,7 +2404,7 @@
                     <type>0</type>
                     <item>
                         <host>Template App PostgreSQL</host>
-                        <key>psql.idle_tx_connections[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE}]</key>
+                        <key>psql.idle_tx_connections[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE}]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -2416,7 +2416,7 @@
                     <type>0</type>
                     <item>
                         <host>Template App PostgreSQL</host>
-                        <key>psql.idle_connections[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE}]</key>
+                        <key>psql.idle_connections[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE}]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -2428,7 +2428,7 @@
                     <type>0</type>
                     <item>
                         <host>Template App PostgreSQL</host>
-                        <key>psql.active_connections[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE}]</key>
+                        <key>psql.active_connections[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE}]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -2440,7 +2440,7 @@
                     <type>0</type>
                     <item>
                         <host>Template App PostgreSQL</host>
-                        <key>psql.locks_waiting[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE}]</key>
+                        <key>psql.locks_waiting[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE}]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -2452,7 +2452,7 @@
                     <type>0</type>
                     <item>
                         <host>Template App PostgreSQL</host>
-                        <key>psql.server_connections[{$PGHOST},{$PGPORT},{$PGUSER},{$PGDATABASE}]</key>
+                        <key>psql.server_connections[{$PGSQL_HOST},{$PGSQL_PORT},{$PGSQL_USER},{$PGSQL_DATABASE}]</key>
                     </item>
                 </graph_item>
             </graph_items>
