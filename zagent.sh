@@ -74,7 +74,7 @@ update-rc.d zabbix-server defaults
 # restart zabbix agent with new settings
 service zabbix-agent restart
 
-# references
+# references -
 #   http://www.badllama.com/content/monitor-mysql-zabbix
 #   http://addmoremem.blogspot.com/2010/10/zabbixs-template-to-monitor-redis.html
 #   https://github.com/jizhang/zabbix-templates
