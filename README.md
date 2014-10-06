@@ -1,20 +1,5 @@
 ## Zabbix Scripts
 
-### zserver.sh
-
-This script gives you access to a one-liner to install a fully functional
-zabbix server setup.  This script is intended to be run on a Ubuntu 12.04
-server, ideally a clean virtual server instance.  The script will install
-and configure Postgresql, Nginx, PHP, and Zabbix.
-
-Simply switch to root and run this command.  It will download the latest
-script, run it, and log the output to the file install.log as well as
-display it on screen.
-
-```
-    curl -s http://rockst4r.net/zserver.sh | bash | tee install.log
-```
-
 ### zagent.sh
 
 This script will install and configure the necessary setup for the Zabbix
