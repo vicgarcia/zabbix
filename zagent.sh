@@ -41,13 +41,14 @@ DELIM
 # create location for zabbix monitor scripts
 mkdir -p /etc/zabbix/scripts
 
-# remove default mysql agent config
-rm /etc/zabbix/zabbix_agentd.d/userparameter_mysql.conf
+# remove default mysql agent config (if it's there)
+rm -f /etc/zabbix/zabbix_agentd.d/userparameter_mysql.conf
 
 # install git just in case, then clone my zabbix-scripts repo
 apt-get -qq -y install git
 pushd /tmp
-git clone https://github.com/vicgarcia/zabbix-scripts.git
+rm -rf zabbix-scripts
+git clone https://github.com/vicgarcia/zabbix-scripts.git zabbix-scripts
 
 # install redis monitoring
 cp zabbix-scripts/config-redis.conf /etc/zabbix/zabbix_agentd.d/redis.conf
@@ -60,7 +61,7 @@ cp zabbix-scripts/monitor-nginx.sh /etc/zabbix/scripts/monitor-nginx.sh
 chmod +x /etc/zabbix/scripts/monitor-nginx.sh
 cp zabbix-scripts/nginx-stats-site.conf /etc/zabbix/scripts/nginx-stats-site.conf
 
-# install mysql monitoring
+# install mysql monitoring (must create mysql user for zabbix agent manually)
 cp zabbix-scripts/config-mysql.conf /etc/zabbix/zabbix_agentd.d/mysql.conf
 
 # install postgres monitoring
