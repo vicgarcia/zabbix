@@ -2,6 +2,14 @@
 # zagent.sh : install and configure zabbix agent components
 #
 
+# get settings to use to configure the agent from user
+echo -e "What's the IP for the Zabbix server?"
+read ZABBIX_SERVER_IP < /dev/tty
+echo -e "What's the IP for this server to listen on?"
+read THIS_SERVER_IP < /dev/tty
+echo -e "What's this server's hostname that Zabbix uses?"
+read THIS_SERVER_HOSTNAME < /dev/tty
+
 # official zabbix 2.2 (lts version) supported sources for ubuntu 14.04
 pushd /tmp
 wget --quiet http://repo.zabbix.com/zabbix/2.2/ubuntu/pool/main/z/zabbix-release/zabbix-release_2.2-1+trusty_all.deb
@@ -15,8 +23,30 @@ apt-get -qq -y install zabbix-agent
 # add zabbix user to the 'adm' group (necessary for log monitoring)
 usermod -a -G adm zabbix
 
+# add configure zabbix agent
+cat > /etc/zabbix/zabbix_agent.conf << DELIM
+PidFile=/var/run/zabbix/zabbix_agent.pid
+LogFile=/var/log/zabbix-agent/zabbix_agent.log
+LogFileSize=0
+Hostname=$THIS_SERVER_HOSTNAME
+SourceIP=$THIS_SERVER_IP
+ListenIP=$THIS_SERVER_IP
+ListenPort=10050
+Server=$ZABBIX_SERVER_IP
+ServerActive=$ZABBIX_SERVER_IP
+Include=/etc/zabbix/zabbix_agent.conf/
+DELIM
+
+# install git just in case, then clone my zabbix-scripts repo
+apt-get -qq -y install git
+pushd /tmp
+https://github.com/vicgarcia/zabbix-scripts.git
+# XXX install stuff via cp from here
+popd
+
+
 # create location for zabbix monitor scripts
-mkdir -p /etc/zabbix/scripts
+#mkdir -p /etc/zabbix/scripts
 
 # create location for the zabbix agent configs
 #mkdir -p /etc/zabbix/zabbix_agent.conf
@@ -53,34 +83,11 @@ mkdir -p /etc/zabbix/scripts
 #chmod +x /etc/zabbix/scripts/monitor-pgsql-find-dbname.sh
 #chmod +x /etc/zabbix/scripts/monitor-pgsql-find-dbname-table.sh
 
-# get settings to use to configure the agent from user
-echo -e "What's the IP for the Zabbix server?"
-read ZABBIX_SERVER_IP < /dev/tty
-echo -e "What's the IP for this server to listen on?"
-read THIS_SERVER_IP < /dev/tty
-echo -e "What's this server's hostname that Zabbix uses?"
-read THIS_SERVER_HOSTNAME < /dev/tty
-
-# add configure zabbix agent
-cat > /etc/zabbix/zabbix_agent.conf << DELIM
-# This is a config file for Zabbix Agent (Unix)
-PidFile=/var/run/zabbix/zabbix_agent.pid
-LogFile=/var/log/zabbix-agent/zabbix_agent.log
-LogFileSize=0
-Hostname=$THIS_SERVER_HOSTNAME
-SourceIP=$THIS_SERVER_IP
-ListenIP=$THIS_SERVER_IP
-ListenPort=10050
-Server=$ZABBIX_SERVER_IP
-ServerActive=$ZABBIX_SERVER_IP
-Include=/etc/zabbix/zabbix_agent.conf/
-DELIM
-
 # enable zabbix agent start on boot
 #update-rc.d zabbix-server defaults
 
 # restart zabbix agent with new settings
-service zabbix-agent restart
+#service zabbix-agent restart
 
 # references
 #   http://www.badllama.com/content/monitor-mysql-zabbix
