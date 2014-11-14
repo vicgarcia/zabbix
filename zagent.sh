@@ -1,13 +1,16 @@
 #!/bin/bash
+# zagent.sh : install and configure zabbix agent components
+#
 
-# zagent.sh - install and configure zabbix agent
-
-# install apt-add-repository tool
-apt-get -qq -y install python-software-properties
+# official zabbix 2.2 (lts version) supported sources for ubuntu 14.04
+pushd /tmp
+wget --quiet http://repo.zabbix.com/zabbix/2.2/ubuntu/pool/main/z/zabbix-release/zabbix-release_2.2-1+trusty_all.deb
+dpkg -i zabbix-release_2.2-1+trusty_all.deb
+apt-get -qq -y update
+popd
 
 # install zabbix agent
-apt-add-repository ppa:pbardov/zabbix -y && apt-get -qq -y update
-apt-get -y install zabbix-agent
+apt-get -qq -y install zabbix-agent
 
 # add zabbix user to the 'adm' group (necessary for log monitoring)
 usermod -a -G adm zabbix
@@ -46,12 +49,9 @@ chmod +x /etc/zabbix/scripts/monitor-pgsql-find-dbname.sh
 chmod +x /etc/zabbix/scripts/monitor-pgsql-find-dbname-table.sh
 
 # get settings to use to configure the agent from user
-echo -e "What's the IP for the Zabbix server?"
-read ZABBIX_SERVER_IP < /dev/tty
-echo -e "What's the IP for this server to listen on?"
-read THIS_SERVER_IP < /dev/tty
-echo -e "What's this server's hostname that Zabbix uses?"
-read THIS_SERVER_HOSTNAME < /dev/tty
+read -p "What's the IP for the Zabbix server?" -r -t 20 ZABBIX_SERVER_IP && echo
+read -p "What's the IP for this server to listen on?" -r -t 20 THIS_SERVER_IP && echo
+read -p "What's this server's hostname that Zabbix uses?" -r -t 20 THIS_SERVER_HOSTNAME && echo
 
 # add configure zabbix agent
 cat > /etc/zabbix/zabbix_agentd.conf << DELIM
