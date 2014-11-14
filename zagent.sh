@@ -27,7 +27,7 @@ usermod -a -G adm zabbix
 mv /etc/zabbix/zabbix_agentd.conf /etc/zabbix/zabbix_agentd.conf.default
 cat > /etc/zabbix/zabbix_agentd.conf << DELIM
 PidFile=/var/run/zabbix/zabbix_agentd.pid
-LogFile=/var/log/zabbix-agent/zabbix_agentd.log
+LogFile=/var/log/zabbix/zabbix_agentd.log
 LogFileSize=0
 Hostname=$THIS_SERVER_HOSTNAME
 SourceIP=$THIS_SERVER_IP
@@ -38,59 +38,41 @@ ServerActive=$ZABBIX_SERVER_IP
 Include=/etc/zabbix/zabbix_agentd.d/
 DELIM
 
+# create location for zabbix monitor scripts
+mkdir -p /etc/zabbix/scripts
+
 # remove default mysql agent config
 rm /etc/zabbix/zabbix_agentd.d/userparameter_mysql.conf
+
 # install git just in case, then clone my zabbix-scripts repo
 apt-get -qq -y install git
 pushd /tmp
-https://github.com/vicgarcia/zabbix-scripts.git
-# XXX install stuff via cp from here
+git clone https://github.com/vicgarcia/zabbix-scripts.git
+
+# install redis monitoring
+cp zabbix-scripts/config-redis.conf /etc/zabbix/zabbix_agentd.d/redis.conf
+cp zabbix-scripts/monitor-redis.pl /etc/zabbix/scripts/monitor-redis.pl
+chmod +x /etc/zabbix/scripts/monitor-redis.pl
+
+# install nginx monitoring (nginx site config must be installed manually)
+cp zabbix-scripts/config-nginx.conf /etc/zabbix/zabbix_agentd.d/nginx.conf
+cp zabbix-scripts/monitor-nginx.sh /etc/zabbix/scripts/monitor-nginx.sh
+chmod +x /etc/zabbix/scripts/monitor-nginx.sh
+cp zabbix-scripts/nginx-stats-site.conf /etc/zabbix/scripts/nginx-stats-site.conf
+
+# install mysql monitoring
+cp zabbix-scripts/config-mysql.conf /etc/zabbix/zabbix_agentd.d/mysql.conf
+
+# install postgres monitoring
+cp zabbix-scripts/config-pgsql.conf /etc/zabbix/zabbix_agentd.d/pgsql.conf
+cp zabbix-scripts/monitor-pgsql-find-dbname.sh /etc/zabbix/scripts/monitor-pgsql-find-dbname.sh
+chmod +x /etc/zabbix/scripts/monitor-pgsql-find-dbname.sh
+cp zabbix-scripts/monitor-pgsql-find-dbname-table.sh /etc/zabbix/scripts/monitor-pgsql-find-dbname-table.sh
+chmod +x /etc/zabbix/scripts/monitor-pgsql-find-dbname-table.sh
+
 popd
 
-
-# create location for zabbix monitor scripts
-#mkdir -p /etc/zabbix/scripts
-
-# create location for the zabbix agent configs
-#mkdir -p /etc/zabbix/zabbix_agent.conf
-
-# install redis monitor script from git repo with curl
-
-# install redis monitoring ...
-#curl -o /etc/zabbix/zabbix_agent.conf/config-redis.conf \
-#    https://raw.githubusercontent.com/vicgarcia/zabbix-scripts/master/config-redis.conf
-#curl -o /etc/zabbix/scripts/monitor-redis.pl \
-#    https://raw.githubusercontent.com/vicgarcia/zabbix-scripts/master/monitor-redis.pl
-#chmod +x /etc/zabbix/scripts/monitor-redis.pl
-
-# install nginx monitoring ...
-#curl -o /etc/zabbix/zabbix_agent.conf/config-nginx.conf \
-#    https://raw.githubusercontent.com/vicgarcia/zabbix-scripts/master/config-nginx.conf
-#curl -o /etc/zabbix/scripts/monitor-nginx.sh \
-#    https://raw.githubusercontent.com/vicgarcia/zabbix-scripts/master/monitor-nginx.sh
-#curl -o /etc/zabbix/scripts/nginx-stats-site.conf \
-#    https://raw.githubusercontent.com/vicgarcia/zabbix-scripts/master/nginx-stats-site.conf
-#chmod +x /etc/zabbix/scripts/monitor-nginx.sh
-
-# install mysql monitoring ...
-#curl -o /etc/zabbix/zabbix_agent.conf/config-mysql.conf \
-#    https://raw.githubusercontent.com/vicgarcia/zabbix-scripts/master/config-mysql.conf
-
-# install postgres monitoring ...
-#curl -o /etc/zabbix/zabbix_agent.conf.d/config-pgsql.conf \
-#    https://raw.githubusercontent.com/vicgarcia/zabbix-scripts/master/config-pgsql.conf
-#curl -o /etc/zabbix/scripts/monitor-pgsql-find-dbname.sh \
-#    https://raw.githubusercontent.com/vicgarcia/zabbix-scripts/master/monitor-pgsql-find-dbname.sh
-#curl -o /etc/zabbix/scripts/monitor-pgsql-find-dbname-table.sh \
-#    https://raw.githubusercontent.com/vicgarcia/zabbix-scripts/master/monitor-pgsql-find-dbname-table.sh
-#chmod +x /etc/zabbix/scripts/monitor-pgsql-find-dbname.sh
-#chmod +x /etc/zabbix/scripts/monitor-pgsql-find-dbname-table.sh
-
-# enable zabbix agent start on boot
-#update-rc.d zabbix-server defaults
-
-# restart zabbix agent with new settings
-#service zabbix-agent restart
+# XXX make sure z-agent starts on reboot, recommend a reboot to verify this
 
 # references
 #   http://www.badllama.com/content/monitor-mysql-zabbix
