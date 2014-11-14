@@ -24,9 +24,10 @@ apt-get -qq -y install zabbix-agent
 usermod -a -G adm zabbix
 
 # add configure zabbix agent
-cat > /etc/zabbix/zabbix_agent.conf << DELIM
-PidFile=/var/run/zabbix/zabbix_agent.pid
-LogFile=/var/log/zabbix-agent/zabbix_agent.log
+mv /etc/zabbix/zabbix_agentd.conf /etc/zabbix/zabbix_agentd.conf.default
+cat > /etc/zabbix/zabbix_agentd.conf << DELIM
+PidFile=/var/run/zabbix/zabbix_agentd.pid
+LogFile=/var/log/zabbix-agent/zabbix_agentd.log
 LogFileSize=0
 Hostname=$THIS_SERVER_HOSTNAME
 SourceIP=$THIS_SERVER_IP
@@ -34,9 +35,11 @@ ListenIP=$THIS_SERVER_IP
 ListenPort=10050
 Server=$ZABBIX_SERVER_IP
 ServerActive=$ZABBIX_SERVER_IP
-Include=/etc/zabbix/zabbix_agent.conf/
+Include=/etc/zabbix/zabbix_agentd.d/
 DELIM
 
+# remove default mysql agent config
+rm /etc/zabbix/zabbix_agentd.d/userparameter_mysql.conf
 # install git just in case, then clone my zabbix-scripts repo
 apt-get -qq -y install git
 pushd /tmp
