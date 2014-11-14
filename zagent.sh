@@ -18,35 +18,40 @@ usermod -a -G adm zabbix
 # create location for zabbix monitor scripts
 mkdir -p /etc/zabbix/scripts
 
+# create location for the zabbix agent configs
+#mkdir -p /etc/zabbix/zabbix_agent.conf
+
 # install redis monitor script from git repo with curl
 
 # install redis monitoring ...
-curl -o /etc/zabbix/zabbix_agentd.conf.d/config-redis.conf \
-    https://raw.githubusercontent.com/vicgarcia/zabbix-scripts/master/config-redis.conf
-curl -o /etc/zabbix/scripts/monitor-redis.pl \
-    https://raw.githubusercontent.com/vicgarcia/zabbix-scripts/master/monitor-redis.pl
-chmod +x /etc/zabbix/scripts/monitor-redis.pl
+#curl -o /etc/zabbix/zabbix_agent.conf/config-redis.conf \
+#    https://raw.githubusercontent.com/vicgarcia/zabbix-scripts/master/config-redis.conf
+#curl -o /etc/zabbix/scripts/monitor-redis.pl \
+#    https://raw.githubusercontent.com/vicgarcia/zabbix-scripts/master/monitor-redis.pl
+#chmod +x /etc/zabbix/scripts/monitor-redis.pl
 
 # install nginx monitoring ...
-curl -o /etc/zabbix/zabbix_agentd.conf.d/config-nginx.conf \
-    https://raw.githubusercontent.com/vicgarcia/zabbix-scripts/master/config-nginx.conf
-curl -o /etc/zabbix/scripts/monitor-nginx.sh \
-    https://raw.githubusercontent.com/vicgarcia/zabbix-scripts/master/monitor-nginx.sh
-chmod +x /etc/zabbix/scripts/monitor-nginx.sh
+#curl -o /etc/zabbix/zabbix_agent.conf/config-nginx.conf \
+#    https://raw.githubusercontent.com/vicgarcia/zabbix-scripts/master/config-nginx.conf
+#curl -o /etc/zabbix/scripts/monitor-nginx.sh \
+#    https://raw.githubusercontent.com/vicgarcia/zabbix-scripts/master/monitor-nginx.sh
+#curl -o /etc/zabbix/scripts/nginx-stats-site.conf \
+#    https://raw.githubusercontent.com/vicgarcia/zabbix-scripts/master/nginx-stats-site.conf
+#chmod +x /etc/zabbix/scripts/monitor-nginx.sh
 
 # install mysql monitoring ...
-curl -o /etc/zabbix/zabbix_agentd.conf.d/config-mysql.conf \
-    https://raw.githubusercontent.com/vicgarcia/zabbix-scripts/master/config-mysql.conf
+#curl -o /etc/zabbix/zabbix_agent.conf/config-mysql.conf \
+#    https://raw.githubusercontent.com/vicgarcia/zabbix-scripts/master/config-mysql.conf
 
 # install postgres monitoring ...
-curl -o /etc/zabbix/zabbix_agentd.conf.d/config-pgsql.conf \
-    https://raw.githubusercontent.com/vicgarcia/zabbix-scripts/master/config-pgsql.conf
-curl -o /etc/zabbix/scripts/monitor-pgsql-find-dbname.sh \
-    https://raw.githubusercontent.com/vicgarcia/zabbix-scripts/master/monitor-pgsql-find-dbname.sh
-curl -o /etc/zabbix/scripts/monitor-pgsql-find-dbname-table.sh \
-    https://raw.githubusercontent.com/vicgarcia/zabbix-scripts/master/monitor-pgsql-find-dbname-table.sh
-chmod +x /etc/zabbix/scripts/monitor-pgsql-find-dbname.sh
-chmod +x /etc/zabbix/scripts/monitor-pgsql-find-dbname-table.sh
+#curl -o /etc/zabbix/zabbix_agent.conf.d/config-pgsql.conf \
+#    https://raw.githubusercontent.com/vicgarcia/zabbix-scripts/master/config-pgsql.conf
+#curl -o /etc/zabbix/scripts/monitor-pgsql-find-dbname.sh \
+#    https://raw.githubusercontent.com/vicgarcia/zabbix-scripts/master/monitor-pgsql-find-dbname.sh
+#curl -o /etc/zabbix/scripts/monitor-pgsql-find-dbname-table.sh \
+#    https://raw.githubusercontent.com/vicgarcia/zabbix-scripts/master/monitor-pgsql-find-dbname-table.sh
+#chmod +x /etc/zabbix/scripts/monitor-pgsql-find-dbname.sh
+#chmod +x /etc/zabbix/scripts/monitor-pgsql-find-dbname-table.sh
 
 # get settings to use to configure the agent from user
 echo -e "What's the IP for the Zabbix server?"
@@ -57,10 +62,10 @@ echo -e "What's this server's hostname that Zabbix uses?"
 read THIS_SERVER_HOSTNAME < /dev/tty
 
 # add configure zabbix agent
-cat > /etc/zabbix/zabbix_agentd.conf << DELIM
+cat > /etc/zabbix/zabbix_agent.conf << DELIM
 # This is a config file for Zabbix Agent (Unix)
-PidFile=/var/run/zabbix/zabbix_agentd.pid
-LogFile=/var/log/zabbix-agent/zabbix_agentd.log
+PidFile=/var/run/zabbix/zabbix_agent.pid
+LogFile=/var/log/zabbix-agent/zabbix_agent.log
 LogFileSize=0
 Hostname=$THIS_SERVER_HOSTNAME
 SourceIP=$THIS_SERVER_IP
@@ -68,11 +73,11 @@ ListenIP=$THIS_SERVER_IP
 ListenPort=10050
 Server=$ZABBIX_SERVER_IP
 ServerActive=$ZABBIX_SERVER_IP
-Include=/etc/zabbix/zabbix_agentd.conf.d/
+Include=/etc/zabbix/zabbix_agent.conf/
 DELIM
 
 # enable zabbix agent start on boot
-update-rc.d zabbix-server defaults
+#update-rc.d zabbix-server defaults
 
 # restart zabbix agent with new settings
 service zabbix-agent restart
