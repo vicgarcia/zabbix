@@ -18,7 +18,7 @@ ZBX_REQ_DATA="$1"
 ZBX_REQ_DATA_URL="$2"
 
 # Nginx defaults
-NGINX_STATUS_DEFAULT_URL="http://localhost:80/nginx_status"
+NGINX_STATUS_DEFAULT_URL="http://localhost:80/nginx"
 WGET_BIN="/usr/bin/wget"
 
 #
@@ -47,7 +47,7 @@ if [ $? -ne 0 -o -z "$NGINX_STATS" ]; then
   exit 1
 fi
 
-# 
+#
 # Extract data from nginx stats
 #
 case $ZBX_REQ_DATA in
