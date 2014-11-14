@@ -49,9 +49,12 @@ chmod +x /etc/zabbix/scripts/monitor-pgsql-find-dbname.sh
 chmod +x /etc/zabbix/scripts/monitor-pgsql-find-dbname-table.sh
 
 # get settings to use to configure the agent from user
-read -p "What's the IP for the Zabbix server?" -r -t 20 ZABBIX_SERVER_IP && echo
-read -p "What's the IP for this server to listen on?" -r -t 20 THIS_SERVER_IP && echo
-read -p "What's this server's hostname that Zabbix uses?" -r -t 20 THIS_SERVER_HOSTNAME && echo
+echo -e "What's the IP for the Zabbix server?"
+read ZABBIX_SERVER_IP < /dev/tty
+echo -e "What's the IP for this server to listen on?"
+read THIS_SERVER_IP < /dev/tty
+echo -e "What's this server's hostname that Zabbix uses?"
+read THIS_SERVER_HOSTNAME < /dev/tty
 
 # add configure zabbix agent
 cat > /etc/zabbix/zabbix_agentd.conf << DELIM
