@@ -37,6 +37,11 @@ server.  Files prefixed with 'monitor-' should be installed in
 
 ## Monitoring Configurations
 
+After you've run the zagent.sh script, which installs the basic zabbix agent and
+configures it for basic monitoring. In order to use some of the templates for 
+monitoring services provided in the repo, there are some additional configurations
+that will have to be made beyond what is done by the zagent.sh installer.
+
 ### Nginx
 
 In /etc/zabbix/scripts/, the nginx-stats-site.conf file contains the necessary
