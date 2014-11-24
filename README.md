@@ -70,16 +70,21 @@ the zabbix agent, will need to have a home directory in which we will store a
 .pgpass file.
 
 first, we need to stop the zabbix agent (we're going to be root here) :
+
   service zabbix-agent stop
 
 then, modify the zabbix user :
+
   usermod -d /home/zabbix zabbix
 
 create a postgresql superuser (this will prompt for password) :
+
   su postgres
+
   createuser -s -P zagent 
 
 add .pgpass with password for zagent postgresql user :
+
   echo "*:*:*:zagent:<password>" > /home/zabbix/.pgpass
 
 Once the postgres and zabbix accounts are configured as necessary on the monitored
@@ -88,7 +93,9 @@ setting macros.  There are many configurations which can handled thru macros, bu
 the minimal ones we will need to set are :
 
 {$PGSQL_USER} : typically 'zagent', the postgres user account created above
+
 {$PGSQL_LOGDIR} : location of postgres log files, often /var/log/postgresql
+
 {$PGSQL_SCRIPTDIR} : location of zabbix agent scripts, /etc/zabbix/scripts
 
 Once Postgresql monitoring is properly configured, it may take a little bit (due
