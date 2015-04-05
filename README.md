@@ -11,7 +11,7 @@ script as well.
 This should be run as the root user.
 
 ```
-    curl -s http://rockst4r.net/zagent.sh | bash
+    curl -s https://raw.githubusercontent.com/vicgarcia/zabbix-scripts/master/zagent.sh | bash
 ```
 
 ### Zabbix UI Templates
