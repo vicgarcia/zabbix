@@ -38,7 +38,7 @@ server.  Files prefixed with 'monitor-' should be installed in
 ## Monitoring Configurations
 
 After you've run the zagent.sh script, which installs the basic zabbix agent and
-configures it for basic monitoring. In order to use some of the templates for 
+configures it for basic monitoring. In order to use some of the templates for
 monitoring services provided in the repo, there are some additional configurations
 that will have to be made beyond what is done by the zagent.sh installer.
 
@@ -56,7 +56,7 @@ site config into your server.  This could be copying this config file to your
 ### MySQL
 
 In order to collect data from mysql, you will need to create a mysql user account
-for the zabbix agent to use. On the server you're monitoring, run something like this:  
+for the zabbix agent to use. On the server you're monitoring, run something like this:
 
 echo "grant usage on *.* to 'zagent'@'localhost' identified by '<PASSWORD_HERE>'" \
   | mysql -u root -p<MYSQL_ROOT_PASSWORD>
@@ -70,8 +70,8 @@ I typically use the username 'zagent', since it's fairly descriptive.
 The scripts I'm using are slightly modified from pg_monz, a comprehensive monitoring
 solution for Postgres w/ Zabbix.  You use the components provided here like so.
 
-In order to use this toolchain, the zabbix user, which is created when installing 
-the zabbix agent, will need to have a home directory in which we will store a 
+In order to use this toolchain, the zabbix user, which is created when installing
+the zabbix agent, will need to have a home directory in which we will store a
 .pgpass file.
 
 first, we need to stop the zabbix agent (we're going to be root here) :
@@ -86,7 +86,7 @@ create a postgresql superuser (this will prompt for password) :
 
   su postgres
 
-  createuser -s -P zagent 
+  createuser -s -P zagent
 
 add .pgpass with password for zagent postgresql user :
 
