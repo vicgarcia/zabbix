@@ -1,19 +1,21 @@
 #!/bin/bash
 # zagent.sh : install and configure zabbix agent components
-#
 
 # get settings to use to configure the agent from user
+
 echo -e "What's the IP for the Zabbix server?"
 read ZABBIX_SERVER_IP < /dev/tty
+
 echo -e "What's the IP for this server to listen on?"
 read THIS_SERVER_IP < /dev/tty
+
 echo -e "What's this server's hostname that Zabbix uses?"
 read THIS_SERVER_HOSTNAME < /dev/tty
 
-# official zabbix 2.2 (lts version) supported sources for ubuntu 14.04
+# official zabbix 3.0 for ubuntu 14.04
 pushd /tmp
-wget --quiet http://repo.zabbix.com/zabbix/2.2/ubuntu/pool/main/z/zabbix-release/zabbix-release_2.2-1+trusty_all.deb
-dpkg -i zabbix-release_2.2-1+trusty_all.deb
+wget --quiet http://repo.zabbix.com/zabbix/3.0/debian/pool/main/z/zabbix-release/zabbix-release_3.0-1+wheezy_all.deb
+dpkg -i zabbix-release_3.0-1+wheezy_all.deb
 apt-get -qq -y update
 popd
 
@@ -44,8 +46,7 @@ mkdir -p /etc/zabbix/scripts
 # remove default mysql agent config (if it's there)
 rm -f /etc/zabbix/zabbix_agentd.d/userparameter_mysql.conf
 
-# install git just in case, then clone my zabbix-scripts repo
-apt-get -qq -y install git
+# clone my zabbix-scripts repo
 pushd /tmp
 rm -rf zabbix-scripts
 git clone https://github.com/vicgarcia/zabbix-scripts.git zabbix-scripts
@@ -73,7 +74,7 @@ chmod +x /etc/zabbix/scripts/monitor-pgsql-find-dbname-table.sh
 
 popd
 
-# XXX make sure z-agent starts on reboot, recommend a reboot to verify this
+# make sure z-agent starts on reboot, recommend a reboot to verify this
 
 # references
 #   http://www.badllama.com/content/monitor-mysql-zabbix
