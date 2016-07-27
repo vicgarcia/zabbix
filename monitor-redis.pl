@@ -1,5 +1,8 @@
 #!/usr/bin/perl -w
 
+# this requires the switch module
+# sudo apt-get install libswitch-perl
+
 #
 ## Copyright (C) 2009 Gleb Voronich <http://stanly.net.ua/>
 ##
